@@ -107,8 +107,8 @@ function loop(){
 		pressed["KeyA"] || pressed["KeyD"] || pressed["KeyW"] || pressed["KeyS"];
 
 	if (anyKeyPressed) {
-		if (pressed["KeyA"]) yangle -= Math.PI * dt;
-		if (pressed["KeyD"]) yangle += Math.PI * dt;
+		if (pressed["KeyA"]) yangle += Math.PI * dt;
+		if (pressed["KeyD"]) yangle -= Math.PI * dt;
 		if (pressed["KeyW"]) xangle += Math.PI * dt;
 		if (pressed["KeyS"]) xangle -= Math.PI * dt;
 	} else {
@@ -134,4 +134,4 @@ setTimeout(loop,1000/fps)
 </script>
 
 <canvas bind:this={show}></canvas>
->
+
