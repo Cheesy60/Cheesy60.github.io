@@ -1,5 +1,8 @@
+<script>
+let show;
+
+$effect(() => {
 console.log(show)
-/** @type {CanvasRenderingContext2D} */
 const ctx = show.getContext("2d")
 show.height = 600
 show.width = 600
@@ -11,7 +14,7 @@ window.addEventListener("keyup",(event) => {
 pressed[event.code] = false
 })
 function clear(){
-	ctx.fillStyle = "gray"
+	ctx.fillStyle = "lavender"
 	ctx.fillRect(0,0,show.width,show.height)
 }
 function pixel({x,y}){
@@ -100,17 +103,18 @@ function loop(){
 //	pixel(normal(perspective(distance(rotatey(point,yangle), dz))))
 //	}
 //	line2(normal({x:-1,y:0}),normal({x:1,y:0}))
-	if(pressed["KeyA"]){
-		yangle -= Math.PI*dt
-	}
-	if(pressed["KeyD"]){
-		yangle += Math.PI*dt
-	}
-	if(pressed["KeyW"]){
-		xangle += Math.PI*dt
-	}
-	if(pressed["KeyS"]){
-		xangle -= Math.PI*dt
+	const anyKeyPressed =
+		pressed["KeyA"] || pressed["KeyD"] || pressed["KeyW"] || pressed["KeyS"];
+
+	if (anyKeyPressed) {
+		if (pressed["KeyA"]) yangle -= Math.PI * dt;
+		if (pressed["KeyD"]) yangle += Math.PI * dt;
+		if (pressed["KeyW"]) xangle += Math.PI * dt;
+		if (pressed["KeyS"]) xangle -= Math.PI * dt;
+	} else {
+		// Auto-spin when no WASD keys are pressed
+		yangle += (Math.PI * 0.5) * dt;
+		xangle += (Math.PI * 0.25) * dt;
 	}
 	for (const face of faces) {
 		for (let i = 0; i < face.length; i++) {
@@ -126,3 +130,8 @@ function loop(){
 }
 
 setTimeout(loop,1000/fps)
+});
+</script>
+
+<canvas bind:this={show}></canvas>
+>
