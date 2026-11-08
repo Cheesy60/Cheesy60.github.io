@@ -4,7 +4,7 @@ let height = width
 </script>
 <h1>My drawings n stuff</h1>
 <div class="images">
-<img src="isaac.gif" {height} {width} alt = "whatever">
+<img src="isaac.gif" {width} alt = "whatever">
 <img src="GreyCat.png" {height} {width} alt = "whatever">
 <img src="aplle.png" {height} {width} alt = "whatever">
 <img src="sythe.gif" {height} {width} alt = "whatever">
