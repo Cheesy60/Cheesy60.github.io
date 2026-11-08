@@ -1,5 +1,5 @@
 <script>
-let width = 200
+let width = 150
 </script>
 <h1>My drawings n stuff</h1>
 <div class="images">
