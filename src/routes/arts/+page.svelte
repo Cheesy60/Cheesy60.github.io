@@ -1,5 +1,5 @@
 <script>
-let width = 300
+let width = 400
 let height = width
 </script>
 <h1>My drawings n stuff</h1>
