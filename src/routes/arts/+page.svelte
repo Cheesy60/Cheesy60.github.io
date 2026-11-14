@@ -1,6 +1,4 @@
 <script>
-let width = 400
-let height = width
 
 let images = ["isaac.gif", "GreyCat.png", "aplle.png", "sythe.gif", "trash1.png"]
 </script>

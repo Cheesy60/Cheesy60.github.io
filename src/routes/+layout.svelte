@@ -14,4 +14,10 @@
 
 {/each}
 </nav>
+<style>
+:global(html){
+	overflow-y: scroll;
+}
+
+</style>
 {@render children()}
