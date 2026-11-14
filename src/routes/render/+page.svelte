@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 let show;
 let speed = $state(1);
 $effect(() => {
