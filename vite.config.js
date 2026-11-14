@@ -7,11 +7,14 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit(
-			pages: 'build',
+		{
+			adapter: adapter({
+				pages: 'build',
 				assets: 'build',
 				fallback: undefined,
 				precompress: false,
 				strict: true
-		)
+			})
+		})
 	]
 });
