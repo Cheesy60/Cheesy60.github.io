@@ -1,7 +1,8 @@
 <script>
 let show;
-
+let speed = $state(1);
 $effect(() => {
+
 console.log(show)
 const ctx = show.getContext("2d")
 show.height = 600
@@ -13,8 +14,14 @@ pressed[event.code] = true
 window.addEventListener("keyup",(event) => {
 pressed[event.code] = false
 })
+function bgclr() {
+  const bodyElement = document.body;
+
+  const computedStyle = window.getComputedStyle(bodyElement);
+  return computedStyle.backgroundColor;
+}
 function clear(){
-	ctx.fillStyle = "lavender"
+	ctx.fillStyle = bgclr()
 	ctx.fillRect(0,0,show.width,show.height)
 }
 function pixel({x,y}){
@@ -95,7 +102,7 @@ let dz = 1
 let yangle = 0
 let xangle = 0
 function loop(){
-	const dt = 1/fps
+	const dt = 1/fps*(speed*0.02)
 //	dz += 1*dt
 //	yangle += Math.PI*dt
 	clear()
@@ -112,7 +119,7 @@ function loop(){
 		if (pressed["KeyW"]) xangle += Math.PI * dt;
 		if (pressed["KeyS"]) xangle -= Math.PI * dt;
 	} else {
-		// Auto-spin when no WASD keys are pressed
+	
 		yangle += (Math.PI * 0.5) * dt;
 		xangle += (Math.PI * 0.25) * dt;
 	}
@@ -132,6 +139,7 @@ function loop(){
 setTimeout(loop,1000/fps)
 });
 </script>
-
+<label for="volume">Speed: {speed}</label>
+<input type="range" min="0" max="100" bind:value={speed} />
 <canvas bind:this={show}></canvas>
 
