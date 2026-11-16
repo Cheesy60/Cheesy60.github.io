@@ -5,10 +5,10 @@ let show;
 let speed = $state(50);
 $effect(() => {
 
-console.log(show)
 const ctx = show.getContext("2d")
-show.width = window.innerWidth - 30
-show.height = show.width
+const size = Math.min(window.innerWidth - 30, window.innerHeight - 100, 700);
+show.width = size;
+show.height = size;
 const pressed = {}
 window.addEventListener("keydown",(event) => {
 pressed[event.code] = true
