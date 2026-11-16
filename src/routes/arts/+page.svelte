@@ -6,6 +6,6 @@ let images = ["isaac.gif", "GreyCat.png", "aplle.png", "sythe.gif", "trash1.png"
 
 <div class="grid grid-cols-2 gap-5">
     {#each images as src}
-    <img {src}  alt = "whatever" class="flex h-110 w-auto">
+    <img {src}  alt = "whatever" class="flex w-auto">
     {/each}
 </div>
