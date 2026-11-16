@@ -1,9 +1,9 @@
 <script>
 	import { page } from '$app/state';
-	let { children } = $props();
 	import "../app.css"
+	let { children } = $props();
 	
-	let links = {"Home" : '/', "Art Gallery" : '/arts', "3D Renderer" : '/render'}
+	let links = {"Home" : '/', "Art Gallery" : '/arts', "3D Renderer" : '/render', "3D modelling" : '/3d'}
 </script>
 
 

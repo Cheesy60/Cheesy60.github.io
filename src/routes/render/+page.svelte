@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 let show;
-let speed = $state(1);
+let speed = $state(50);
 $effect(() => {
 
 console.log(show)
@@ -141,7 +141,7 @@ function loop(){
 setTimeout(loop,1000/fps)
 });
 </script>
-<label for="volume">Speed: {speed}</label>
-<input type="range" min="0" max="100" bind:value={speed} />
+<label for="volume" class="p-7 pb-0">Speed: {speed}</label>
+<input type="range" min="0" max="100"bind:value={speed} />
 <canvas bind:this={show}></canvas>
 
