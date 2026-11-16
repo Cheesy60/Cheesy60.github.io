@@ -7,8 +7,8 @@ $effect(() => {
 
 console.log(show)
 const ctx = show.getContext("2d")
-show.height = window.innerHeight - 30
 show.width = window.innerWidth - 30
+show.height = show.width
 const pressed = {}
 window.addEventListener("keydown",(event) => {
 pressed[event.code] = true
