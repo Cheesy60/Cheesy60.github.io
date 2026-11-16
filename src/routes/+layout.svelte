@@ -19,9 +19,9 @@
 </nav>
 
 {@render children()}
+</div>
 <style>
 :global(html){
 	overflow-y: scroll;
 }
-</div>
 </style>
