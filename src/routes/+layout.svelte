@@ -8,7 +8,7 @@
 
 
 
-<nav class="sticky top-0 bg-[#e3b4f0] w-full flex flex-wrap items-center justify-center gap-2 sm:gap-6 px-4 py-2">
+<nav class="shrink-0 bg-[#e3b4f0] w-full flex flex-wrap items-center justify-center gap-2 sm:gap-6 px-4 py-2">
   {#each Object.entries(links) as [key, value]}
     <a 
       href={value} 
