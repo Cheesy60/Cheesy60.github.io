@@ -6,8 +6,7 @@
 	let links = {"Home" : '/', "Art Gallery" : '/arts', "3D Renderer" : '/render', "3D modelling" : '/3d'}
 </script>
 
-
-
+<div class="min-h-screen flex flex-col">
 <nav class="shrink-0 bg-[#e3b4f0] w-full flex flex-wrap items-center justify-center gap-2 sm:gap-6 px-4 py-2">
   {#each Object.entries(links) as [key, value]}
     <a 
@@ -18,10 +17,11 @@
     </a>
   {/each}
 </nav>
+
+{@render children()}
 <style>
 :global(html){
 	overflow-y: scroll;
 }
-
+</div>
 </style>
-{@render children()}
